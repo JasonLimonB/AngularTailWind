@@ -16,8 +16,6 @@ export class ConsumoapiComponent implements OnInit {
 
     this._servicioApi.getPersonajes().subscribe(( data:any )=>{
       this.personajes = data;
-      console.log(this.personajes);
-      
     });
   }
 
