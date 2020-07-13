@@ -1,0 +1,17 @@
+.con{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #EDF2F7;
+}
+.con::after,
+.con::before{
+    content: '';
+    width: 6%;
+}
+
+.active{
+    color: #000000;
+}

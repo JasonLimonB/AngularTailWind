@@ -1,1 +1,28 @@
-<p>ejempipes works!</p>
+<div class="container mx-auto mt-5">
+    <table class="table-fixed">
+        <thead>
+          <tr>
+            <th class="w-1/2 px-4 py-2">Nombre y descripción del pipe</th>
+            <th class="w-1/4 px-4 py-2">Uso</th>
+            <th class="w-1/4 px-4 py-2">Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">Pipe para poner texto en mayusculas, que en el caso de minusculas es lo mismo pero con lowercase</td>
+            <td class="border px-4 py-2"> Texto | uppercase</td>
+            <td class="border px-4 py-2">{{ txtEjemplo | uppercase }}</td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border px-4 py-2">El pipe slice realiza la misma opcion que el método slice de javascirpt</td>
+            <td class="border px-4 py-2"> Texto | slice : start [ : end ]  </td>
+            <td class="border px-4 py-2"> {{ txtEjemplo | slice : 1 :4 }} </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Pipe number es para darle formato a un numero, con tal de poner el pipe le da el formato pero tiene mas parametros</td>
+            <td class="border px-4 py-2"> value_expression | number [ : digitsInfo [ : locale ] ]  </td>
+            <td class="border px-4 py-2"> {{ numero | number: '3.0-0' }} </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

@@ -12,4 +12,6 @@ export class EjempipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public txtEjemplo: string = "Hola mundo";
+  public numero: number = 12345;
 }
