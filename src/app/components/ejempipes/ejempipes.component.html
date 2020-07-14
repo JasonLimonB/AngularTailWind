@@ -1,4 +1,4 @@
-<div class="container mx-auto mt-5">
+<div class="container mx-auto mt-5 animate__animated animate__fadeIn">
     <table class="table-fixed">
         <thead>
           <tr>
@@ -23,6 +23,55 @@
             <td class="border px-4 py-2"> value_expression | number [ : digitsInfo [ : locale ] ]  </td>
             <td class="border px-4 py-2"> {{ numero | number: '3.0-0' }} </td>
           </tr>
+          <tr class="bg-gray-100">
+            <td class="border px-4 py-2">Pipe porcent, para darle formato de porcentaje</td>
+            <td class="border px-4 py-2"> value_expression | percent [ : digitsInfo [ : locale ] ]  </td>
+            <td class="border px-4 py-2"> {{ numero | percent }} </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Pipe currency, formarto de moneda</td>
+            <td class="border px-4 py-2"> value_expression | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ]   </td>
+            <td class="border px-4 py-2"> {{ numero | currency }} </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border px-4 py-2">Pipe json, si imprimimos el json sin el pipe nos mostrara [Object, Object]</td>
+            <td class="border px-4 py-2"> value_expression | json  </td>
+            <td class="border px-4 py-2"> {{ user | json }} </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Pipe async, espera la respuesta para despues mostrarla en pantalla</td>
+            <td class="border px-4 py-2"> obj_expression | async  </td>
+            <td class="border px-4 py-2"> {{ miPromesa | async }} </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border px-4 py-2">Pipe date, este pipe tiene parametros que puedes utilizar para mas informacion visitar la documentación</td>
+            <td class="border px-4 py-2"> value_expression | date  </td>
+            <td class="border px-4 py-2"> {{ fecha| date: 'medium' }} </td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Pipe personalizado</td>
+            <td class="border px-4 py-2"> obj_expression | miPipe  </td>
+            <td class="border px-4 py-2"> {{ name | capitalizado }} </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border px-4 py-2">Pipe contrasena, es un pipe personalizado para mostrat la contraseña o no <br> 
+              <button (click)="activo = !activo" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Activar / Desactivar</button> 
+              <br>
+              {{ activo }}
+            </td>
+            <td class="border px-4 py-2"> value_expression | contrasena  </td>
+            <td class="border px-4 py-2"> {{ name | contrasena:activo }} </td>
+          </tr>
         </tbody>
       </table>
+
+      <div class="container mx-auto mt-5 mb-5">
+        <p>Crearemos un pipe que nos permite usar un dom seguro</p>
+        <iframe width="560" height="315" 
+                [src]="urlVideo | domseguro" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
 </div>
+
+<button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+  Button

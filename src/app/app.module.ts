@@ -11,7 +11,10 @@ import { ConsumoapiComponent } from './components/consumoapi/consumoapi.componen
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { RickAndMortySService } from './services/consumo/rick-and-morty-s.service'
+import { RickAndMortySService } from './services/consumo/rick-and-morty-s.service';
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { ContrasenaPipe } from './pipes/contrasena.pipe'
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { RickAndMortySService } from './services/consumo/rick-and-morty-s.servic
     EjempipesComponent,
     ContactoComponent,
     MenuComponent,
-    ConsumoapiComponent
+    ConsumoapiComponent,
+    CapitalizadoPipe,
+    DomseguroPipe,
+    ContrasenaPipe
   ],
   imports: [
     BrowserModule,

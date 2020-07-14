@@ -14,4 +14,18 @@ export class EjempipesComponent implements OnInit {
 
   public txtEjemplo: string = "Hola mundo";
   public numero: number = 12345;
+  public user: any = { "nombre": "Jason", "ciudad": "México" };
+
+  public miPromesa = new Promise<string>( (resolve) => {
+    setTimeout(()=>{
+      resolve("Datos esperados")
+    }, 4500);
+  } );
+
+  public fecha = new Date();
+  public name = 'jAsoN liMoN';
+
+  public urlVideo = 'https://www.youtube.com/embed/UJqFgg-CmBo';
+
+  public activo:boolean = false;
 }
