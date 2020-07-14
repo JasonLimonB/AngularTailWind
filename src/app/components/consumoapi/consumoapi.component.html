@@ -1,1 +1,13 @@
-<p>consumoapi works!</p>
+<div class="container mx-auto mt-5 contenedor">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg pad" *ngFor="let item of personajes" >
+        <img class="w-full" src="{{ item.image }}" alt="{{ item.name }} ">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ item.name }} </div>
+        </div>
+        <div class="px-6 py-4">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{ item.status }}</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{ item.species }}</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">{{ item.gender }}</span>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,8 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pad{
+    margin: 20px 15px;
+}

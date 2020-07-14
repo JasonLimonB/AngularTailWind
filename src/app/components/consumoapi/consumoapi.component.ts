@@ -15,9 +15,7 @@ export class ConsumoapiComponent implements OnInit {
   ngOnInit(): void {
 
     this._servicioApi.getPersonajes().subscribe(( data:any )=>{
-      this.personajes = data;
-      console.log(this.personajes);
-      
+      this.personajes = data.results;
     });
   }
 
