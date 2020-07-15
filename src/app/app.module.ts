@@ -16,6 +16,8 @@ import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { ContrasenaPipe } from './pipes/contrasena.pipe'
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { ContrasenaPipe } from './pipes/contrasena.pipe'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [RickAndMortySService],
   bootstrap: [AppComponent]

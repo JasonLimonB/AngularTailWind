@@ -4,17 +4,21 @@
 
 <div class="container mx-auto mt-5 flex justify-center animate__animated animate__fadeIn ">
 
-  <form class="w-full max-w-sm">
+  <form class="w-full max-w-sm"  [formGroup]="formularioContacto" (ngSubmit)="enviar()">
     <div class="md:flex md:items-center mb-6">
      
       <div class="md:w-full">
-        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" placeholder="Nombre(s)">
+        <input 
+          formControlName="nombre"
+          class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" placeholder="Nombre(s)">
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
       
       <div class="md:w-full">
-        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-username" type="email" placeholder="Email">
+        <input 
+        formControlName="email"
+          class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-username" type="email" placeholder="Email">
       </div>
     </div>
 
@@ -23,7 +27,9 @@
         ¿Qué necesitas?
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+        <select 
+        formControlName="opciones"
+        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
           <option selected disabled>Seleccione una opcion</option>
           <option>Aplicación web</option>
           <option>Aplicación movil</option>
@@ -38,7 +44,9 @@
     <div class="md:flex md:items-center mb-6">
       
       <label class="md:w-full block text-gray-500 font-bold">
-        <input class="mr-2 leading-tight" type="checkbox">
+        <input
+        formControlName="terminos"
+          class="mr-2 leading-tight" type="checkbox">
         <span class="text-sm">
           Acepto los terminos y condiciones
         </span>
@@ -47,11 +55,19 @@
     <div class="md:flex md:items-center">
       
       <div class="md:w-full">
-        <button  class="shadow miBoton focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+        <button  class="shadow miBoton focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
           Solicitar
         </button>
       </div>
     </div>
   </form>
 
+  
+
+</div>
+
+<div class="container mx-auto mt-5">
+  <div>Estado del formulario {{ formularioContacto.valid }} </div>
+  <div> {{ formularioContacto.status }} </div>
+  <div> {{ formularioContacto.value | json }} </div>
 </div>
